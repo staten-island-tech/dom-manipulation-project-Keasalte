@@ -2,32 +2,43 @@ const DOMSelectors = {
     name: document.getElementById("userinput"),
     picture: document.getElementById("userinput2"),
     submit: document.getElementById("button"),
-    form: document.querySelector("#form"),
-    display: document.querySelector(".box"),
+    form: document.getElementById("form"),
+    display: document.querySelector(".box2"),
 }
 
 DOMSelectors.submit.addEventListener("click", function (e) {
     e.preventDefault();
-    result();
-    clearInputs();
-    clearResult();
+    createthecard();
+    refresh();
+    goodbye();
   });
 
-  function result() {
+  function createthecard() {
 
-    let Name = DOMSelectors.name.value;
-    let image = DOMSelectors.picture.value;
+    const title = DOMSelectors.name.value;
+    const portrait = DOMSelectors.picture.value;
     DOMSelectors.box.insertAdjacentHTML(
-        "afterend",
-        `
-     <section id="result">
-     <div class="output">
-     <p><img src=${image}></p>
-     <p>${Name}</p>
-     <button class="buttons" id="clear">clear</button>
-     </div>
-     </section>
-        `
+        "beforeend",
+        `<section id="result">
+        <div class="output">
+        <p><img src=${portrait}></p>
+        <p>${title}</p>
+        <button class="buttons" id="clear">clear</button>
+        </div>
+        </section>`
     );
   }
   
+  function refresh() {
+    DOMSelectors.name.value = "";
+    DOMSelectors.display.value = "";
+  }
+
+  function goodbye () {
+    const remove = document.querySelectorAll(".clear");
+    remove.forEach((eachRemove) => {
+      eachRemove.addEventListener("click", (event) => {
+        event.target.parentElement.remove();
+      });
+    });
+  }
