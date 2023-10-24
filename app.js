@@ -1,44 +1,34 @@
 const DOMSelectors = {
-    name: document.getElementById("userinput"),
-    picture: document.getElementById("userinput2"),
-    submit: document.getElementById("button"),
-    form: document.getElementById("form"),
-    display: document.querySelector(".box2"),
-}
+  form: document.getElementById("form"),
+  name: document.querySelector(".userinput"),
+  image: document.querySelector(".userinput2"),
+  output: document.getElementById("output"),
+};
 
-DOMSelectors.submit.addEventListener("click", function (e) {
-    e.preventDefault();
+DOMSelectors.form.addEventListener("button", function () {  
+    
     createthecard();
-    refresh();
-    goodbye();
+    inputclear();
+
   });
 
   function createthecard() {
-
     const title = DOMSelectors.name.value;
-    const portrait = DOMSelectors.picture.value;
-    DOMSelectors.box.insertAdjacentHTML(
-        "beforeend",
-        `<section id="result">
-        <div class="output">
-        <p><img src=${portrait}></p>
-        <p>${title}</p>
-        <button class="buttons" id="clear">clear</button>
-        </div>
+    const image = DOMSelectors.image.value;
+    DOMSelectors.output.insertAdjacentHTML(
+        "afterbegin",
+        `    
+        <section id="result">
+          <div class="output2">
+            <p><img src=>${image}</p>
+             <p>${title}</p>
+             <button class="buttons" id="clear">clear</button>
+         </div>
         </section>`
     );
   }
   
-  function refresh() {
-    DOMSelectors.name.value = "";
-    DOMSelectors.display.value = "";
-  }
-
-  function goodbye () {
-    const remove = document.querySelectorAll(".clear");
-    remove.forEach((eachRemove) => {
-      eachRemove.addEventListener("click", (event) => {
-        event.target.parentElement.remove();
-      });
-    });
+  function inputclear(){
+    DOMSelectors.name.value="";
+    DOMSelectors.image.value="";
   }
