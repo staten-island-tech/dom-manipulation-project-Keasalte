@@ -2,19 +2,18 @@ const DOMSelectors = {
   form: document.getElementById("form"),
   name: document.querySelector(".userinput"),
   image: document.querySelector(".userinput2"),
-  output: document.getElementById("output"),
+  button: document.getElementById("button"),
 };
 
-DOMSelectors.form.addEventListener("button", function () {  
-    
-    createthecard();
-    inputclear();
-
+DOMSelectors.form.addEventListener("click", function (e) {  
+    e.preventDefault();
+    e.createthecard();
+    e.inputclear();
   });
 
   function createthecard() {
-    const title = DOMSelectors.name.value;
-    const image = DOMSelectors.image.value;
+     title = DOMSelectors.name.value;
+     image = DOMSelectors.image.value;
     DOMSelectors.output.insertAdjacentHTML(
         "afterbegin",
         `    
