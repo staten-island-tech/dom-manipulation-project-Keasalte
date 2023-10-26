@@ -19,13 +19,12 @@ function refresh() {
   DOMSelectors.image.value = "";
 }
 
-
 function create() {
   let list = document.querySelector("#output");
   list.insertAdjacentHTML(
     "beforeend",
     `
-    <div class="card-aa">
+    <div class="cards">
     <img src="${DOMSelectors.image.value}" alt="">
     <p>${DOMSelectors.input.value}</p>
     <button class="delete">Delete</button>
@@ -33,3 +32,12 @@ function create() {
     `
   );
 };
+
+function nuke(){ 
+  nuking = document.querySelector(".delete")
+  nuking.forEach((click) => {
+    click.addEventListener("click", (la) => {
+      la.target.parentElement.remove();
+    })
+  })
+ }

@@ -30,13 +30,19 @@ input{
 }
 
 img {
-  max-width: 40%;
-  max-height: 40%;
+  min-width: 400px;
+  min-height:400px;
+  max-width: 400px;
+  max-height: 400px;
   vertical-align: middle;
 }
 .thingymagic{
   width: 50%;
   margin: auto;
+}
+
+.delete{
+  background-color: #880808;
 }
 
 #text{
@@ -52,29 +58,26 @@ img {
 
 #output {
   margin-top: 10rem;
+  padding: 10rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
+  row-gap: 50px;
   background-color: #9baa9f;
   box-shadow: inset 0 0 20px 20px #4d685e;
 }
 
 #card-aa {
-  width: 100%;
-  height:auto;
-  align-items: center;
-  border-radius: 15px;
-  text-align: justify;
+  width: 27%;
   font-size: 3rem;
-  margin-top: 1rem;
+  height: auto;
+  margin: 1rem;
   padding-top:1rem;
   background-color: #7d9686;
-  
 }
 
 @media screen and (max-width: 3000px) {
-  #card-aa {
+  #cards {
     width: 21%;
   }
   #output{
