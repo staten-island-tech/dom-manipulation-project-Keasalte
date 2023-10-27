@@ -36,6 +36,11 @@ img {
   max-height: 400px;
   vertical-align: middle;
 }
+
+.cardname{
+  font-size:8rem;
+}
+
 .thingymagic{
   width: 50%;
   margin: auto;
