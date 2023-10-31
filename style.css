@@ -70,6 +70,8 @@ img {
   row-gap: 50px;
   background-color: #9baa9f;
   box-shadow: inset 0 0 20px 20px #4d685e;
+  margin-left:10rem;
+  margin-right:10rem;
 }
 
 #card-aa {
