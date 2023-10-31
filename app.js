@@ -21,16 +21,18 @@ function refresh() {
 
 function create() {
   let list = document.querySelector("#output");
-  list.insertAdjacentHTML(
-    "beforeend",
-    `
-    <div class="cards">
-    <img src="${DOMSelectors.image.value}" alt="">
-    <p class="cardname">${DOMSelectors.input.value}</p>
-    <button class="delete">Delete</button>
-    </div>
-    `
-  );
+  if (DOMSelectors.input.value !== "" && DOMSelectors.image.value !== ""){
+    list.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div class="cards">
+      <img src="${DOMSelectors.image.value}" alt="">
+      <p class="cardname">${DOMSelectors.input.value}</p>
+      <button class="delete">Delete</button>
+      </div>
+      `
+    );
+  }
 };
 
 function nuke(){ 
